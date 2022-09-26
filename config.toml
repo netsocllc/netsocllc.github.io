@@ -1,4 +1,4 @@
-baseURL = "https://netsocllc.github.io/"
+baseURL = "https://blog.netsoc.us/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "loveit"
