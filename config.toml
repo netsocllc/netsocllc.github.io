@@ -1,10 +1,10 @@
-baseURL = "https://netsocllc.github.io"
+baseURL = "https://netsocllc.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "loveit"
+theme = "LoveIt"
 
 # website title
-title = "My New Hugo Site"
+title = "NETSOC Cybersecurity"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -13,9 +13,9 @@ languageName = "English"
 
 # Author config
 [author]
-  name = "xxxx"
-  email = ""
-  link = ""
+  name = "Bradley Fell"
+  email = "bfell@netsoc.us"
+  link = "https://netsoc.us"
 
 # Menu config
 [menu]
@@ -46,6 +46,14 @@ languageName = "English"
     name = "Categories"
     url = "/categories/"
     title = ""
+          [[menu.main]]
+    weight = 4
+    identifier = "home"
+    pre = ""
+    post = ""
+    name = "Return Home"
+    url = "https://netsoc.us"
+    title = ""
 
 # Markup related configuration in Hugo
 [markup]
@@ -53,3 +61,4 @@ languageName = "English"
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
