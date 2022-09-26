@@ -4,7 +4,7 @@ baseURL = "https://netsocllc.github.io"
 theme = "loveit"
 
 # website title
-title = "My New Hugo Site"
+title = "NETSOC Cybersecurity"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
