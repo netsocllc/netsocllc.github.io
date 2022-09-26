@@ -65,6 +65,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     name = "Categories"
     url = "/categories/"
     title = ""
+      [[menu.main]]
+    weight = 4
+    identifier = "return"
+    pre = ""
+    post = ""
+    name = "Return Home"
+    url = "https://netsoc.us"
+    title = ""
 
 [params]
   # site default theme ["auto", "light", "dark"]
@@ -77,9 +85,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  date format
   dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
-  title = "My cool site"
+  title = "Premier Cybersecurity Services"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "This is my cool site"
+  description = "Premier Cybersecurity Services"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
 
@@ -183,7 +191,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.home.profile]
       enable = true
       # Gravatar Email for preferred avatar in home page
-      gravatarEmail = ""
+      gravatarEmail = "bfell@netsoc.us"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
