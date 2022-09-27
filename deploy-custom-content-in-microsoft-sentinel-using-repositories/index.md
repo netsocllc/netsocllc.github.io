@@ -15,7 +15,7 @@ Sentinel supports connections to GitHub and Azure DevOps repositories. According
 - Contributer access to the code repository in GitHub or Azure DevOps
 - Actions enabled for GitHub and Pipeliens enabled for Azure Devops
 
-![image-20220927081028648](/Users/bfell/Library/Application Support/typora-user-images/image-20220927081028648.png)
+![image-20220927081028648](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927081028648.png)
 
 Pro tip: For the MSSPs and multi-tenant scenarios leveraging Azure Lighthouse, it's recommended assigning these roles to a group in your ARM template prior to deploying Azure Lighthouse. The role definition ids can be found here: https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
 
@@ -25,7 +25,7 @@ Additionally, to deploy custom content it's required to have Actions enabled for
 
 Pro tip: It is extremely useful to leverage a separate workspace as a model tenant to build, test, stage, and export custom content as ARM templates in Microsoft Sentinel.
 
-![Untitled picture2](/Users/bfell/Desktop/crap/Untitled picture2.png)
+![Untitled picture2](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitled picture2.png)
 
 
 
@@ -46,13 +46,13 @@ At the time of writing there were too many cross-tenant limitations which existe
 
 Be sure to be signed into either GitHub or Azure DevOps to connect a repository and in Microsoft Sentinel, under Content Management, select Repositories in the Sentinel workspace where you wish to deploy content.
 
-![image-20220927080432943](/Users/bfell/Library/Application Support/typora-user-images/image-20220927080432943.png)
+![image-20220927080432943](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927080432943.png)
 
 Make sure you're signed into the account which has been assigned the proper permissions, select "Add new", and Create a new connection.
 
 Name the connection and if necessary provide a description, next authorize your Source control application. Once you've authorized either GitHub or AzureDevOps select a repository, branch, and select the Content types and hit create.
 
-![image-20220927082536123](/Users/bfell/Library/Application Support/typora-user-images/image-20220927082536123.png)
+![image-20220927082536123](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927082536123.png)
 
 This connection will create a workflow rule in your source repository and begin to deploy or update any existing content specified in the rule. For the sake of this article, we're going to add the rule after we connect the repository.
 
@@ -60,16 +60,16 @@ This connection will create a workflow rule in your source repository and begin 
 
 In the example below, we'll deploy a really simple analytic rule in which detects for failed login activity in an Active Directory network.
 
-![Untitled picture](/Users/bfell/Desktop/crap/Untitled picture.png)
+![Untitled picture](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitled picture.png)
 
 Since we can only deploy content through Azure Resource Manager (ARM) templates in the form of .json files, it is recommended to first create the rule in a separate workspace and export it. You can do this by selecting the analytic rule and selecting the export button at the top.
 
 Once you have the .json file ARM template, adding this rule to your source repository will immediately deploy to all of the connected workspaces.
 
-![image-20220927084908815](/Users/bfell/Library/Application Support/typora-user-images/image-20220927084908815.png)
+![image-20220927084908815](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927084908815.png)
 
 Note that any changes to existing content will overwrite, any content matching the parameters to deploy will deploy to all workspaces connected to the workflow.
 
-![image-20220927085306366](/Users/bfell/Library/Application Support/typora-user-images/image-20220927085306366.png)
+![image-20220927085306366](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927085306366.png)
 
 Pro tip: Making use of a naming convention to label your CICD content can be extremely helpful when managing content. When managing large rule sets with multiple workspaces, it's recommended making the required updates and changes to rules from the central repository to maintain consistency across the connected workspaces.
