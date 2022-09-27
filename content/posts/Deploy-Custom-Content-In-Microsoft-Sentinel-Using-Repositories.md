@@ -55,7 +55,7 @@ Make sure you're signed into the account which has been assigned the proper perm
 
 Name the connection and if necessary provide a description, next authorize your Source control application. Once you've authorized either GitHub or AzureDevOps select a repository, branch, and select the Content types and hit create.
 
-![image-20220927082536123](/Users/bfell/Desktop/blog/netsocllc.github.io/content/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927082536123.png)
+![image-20220927082536123](/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/image-20220927082536123.png)
 
 This connection will create a workflow rule in your source repository and begin to deploy or update any existing content specified in the rule. For the sake of this article, we're going to add the rule after we connect the repository.
 
