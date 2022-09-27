@@ -1,7 +1,7 @@
 ---
 title: "HackTheBox Write-Up:  Sunday"
 date: 2022-09-27T05:15:03Z
-draft: false
+draft: true
 
 ---
 
