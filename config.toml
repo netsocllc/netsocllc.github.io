@@ -175,7 +175,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.home.profile]
       enable = true
       # Gravatar Email for preferred avatar in home page
-      gravatarEmail = "bfell@netsoc.us"
+      gravatarEmail = "sales@netsoc.us"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
@@ -204,9 +204,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     Twitter = "https://netsoc.us"
     Instagram = "https://netsoc.us"
     Facebook = "https://netsoc.us"
-    Telegram = "https://netsoc.us"
-    Medium = "https://netsoc.us"
-    Gitlab = "https://netsoc.us"
+    Telegram = ""
+    Medium = ""
+    Gitlab = ""
     Youtubelegacy = ""
     Youtubecustom = ""
     Youtubechannel = ""
