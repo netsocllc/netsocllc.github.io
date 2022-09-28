@@ -25,7 +25,7 @@ Additionally, to deploy custom content it's required to have Actions enabled for
 
 Pro tip: It is extremely useful to leverage a separate workspace as a model tenant to build, test, stage, and export custom content as ARM templates in Microsoft Sentinel.
 
-![Untitled picture2](/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitled picture3.png)
+![Untitled picture2](/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitledpicture3.png)
 
 # Deploying Content
 
@@ -58,7 +58,7 @@ This connection will create a workflow rule in your source repository and begin 
 
 In the example below, we'll deploy a really simple analytic rule in which detects for failed login activity in an Active Directory network.
 
-![Untitled picture](/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitled picture6.png)
+![Untitled picture](/posts/Deploy-Custom-Content-In-Microsoft-Sentinel-Using-Repositories.assets/Untitledpicture6.png)
 
 Since we can only deploy content through Azure Resource Manager (ARM) templates in the form of .json files, it is recommended to first create the rule in a separate workspace and export it. You can do this by selecting the analytic rule and selecting the export button at the top.
 
