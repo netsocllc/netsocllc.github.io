@@ -86,7 +86,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # URL of the LOGO
       logo = "https://netsoc.us/wp-content/uploads/2022/09/NETSOC-logo.png"
       # title name
-      name = "NETSOC Cybersecurity"
+      name = ""
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
