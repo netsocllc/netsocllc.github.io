@@ -15,7 +15,7 @@ An attacker can craft an ARM template which can be used to delegate permissions 
 
 Once lighthouse is deployed an attacker can access the victim's target tenant resources from their own tenant. This is very dangerous considering the contributer role can be delegated using Azure Lighthouse. In order to see current delegations you must check which service offers are currently active in the Auzre Portal under "Service Providers." 
 
-![image-20221015103432899](/posts/Detecting Azure Lighthouse Attacks.assets/image-20221015103432899.png)
+![image-20221015103432899](/posts/Detecting-Azure-Lighthouse-Attacks.assets/image-20221015103432899.png)
 
 ## Detection
 
