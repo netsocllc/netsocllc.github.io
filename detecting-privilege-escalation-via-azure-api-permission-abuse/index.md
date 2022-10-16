@@ -23,22 +23,22 @@ Information on what permissions are granted through these roles can be found her
 
 ###  KQL
 
-**let DangerousPermissions = dynamic(["AppRoleAssignment.ReadWrite.All","Application.ReadWrite.All","RoleManagement.ReadWrite.Directory"]);*
- *AuditLogs*
- *| where OperationName == "Add app role assignment to service principal"*
- *| where Result =~ "success"*
- *| mv-expand TargetResources*
- *| mv-expand TargetResources.modifiedProperties*
- *| where TargetResources_modifiedProperties.displayName == "AppRole.Value"*
- *| extend InitiatingUserOrApp = tostring(InitiatedBy.user.userPrincipalName)*
- *| extend InitiatingIpAddress = tostring(InitiatedBy.user.ipAddress)*
- *| extend UserAgent = iff(AdditionalDetails[0].key == "User-Agent",tostring(AdditionalDetails[0].value),"")*
- *| extend AddedPermission = replace_string(tostring(TargetResources_modifiedProperties.newValue),'"','')*
- *| where AddedPermission in~ ( DangerousPermissions )*
- *| mv-expand TargetResources.modifiedProperties*
- *| where TargetResources_modifiedProperties.displayName == "ServicePrincipal.ObjectID"*
- *| extend ServicePrincipalObjectID = replace_string(tostring(TargetResources_modifiedProperties.newValue),'"','')*
- | extend timestamp = TimeGenerated, AccountCustomEntity = InitiatingUserOrApp, IPCustomEntity = InitiatingIpAddress*
+`let DangerousPermissions = dynamic(["AppRoleAssignment.ReadWrite.All","Application.ReadWrite.All","RoleManagement.ReadWrite.Directory"]);`
+ `AuditLogs`
+ `| where OperationName == "Add app role assignment to service principal"`
+ `| where Result =~ "success"`
+ `| mv-expand TargetResources`
+ `| mv-expand TargetResources.modifiedProperties`
+ `| where TargetResources_modifiedProperties.displayName == "AppRole.Value"`
+ `| extend InitiatingUserOrApp = tostring(InitiatedBy.user.userPrincipalName)`
+ `| extend InitiatingIpAddress = tostring(InitiatedBy.user.ipAddress)`
+ `| extend UserAgent = iff(AdditionalDetails[0].key == "User-Agent",tostring(AdditionalDetails[0].value),"")`
+ `| extend AddedPermission = replace_string(tostring(TargetResources_modifiedProperties.newValue),'"','')`
+ `| where AddedPermission in~ ( DangerousPermissions )`
+ `| mv-expand TargetResources.modifiedProperties`
+ `| where TargetResources_modifiedProperties.displayName == "ServicePrincipal.ObjectID"`
+ `| extend ServicePrincipalObjectID = replace_string(tostring(TargetResources_modifiedProperties.newValue),'"','')`
+ `| extend timestamp = TimeGenerated, AccountCustomEntity = InitiatingUserOrApp, IPCustomEntity = InitiatingIpAddress`
 
  
 
