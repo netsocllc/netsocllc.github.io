@@ -1,4 +1,4 @@
-# Detecting Azure Lighthouse Attacks
+# Detecting Azure Lighthouse Privilege Escalation Attacks
 
 
 # Introduction

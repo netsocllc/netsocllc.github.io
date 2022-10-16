@@ -23,7 +23,7 @@ Information on what permissions are granted through these roles can be found her
 
 ###  KQL
 
-``let DangerousPermissions = dynamic(["AppRoleAssignment.ReadWrite.All","Application.ReadWrite.All","RoleManagement.ReadWrite.Directory"]);`
+`'let DangerousPermissions = dynamic(["AppRoleAssignment.ReadWrite.All","Application.ReadWrite.All","RoleManagement.ReadWrite.Directory"]);`
  `AuditLogs`
  `| where OperationName == "Add app role assignment to service principal"`
  `| where Result =~ "success"`
@@ -38,7 +38,7 @@ Information on what permissions are granted through these roles can be found her
  `| mv-expand TargetResources.modifiedProperties`
  `| where TargetResources_modifiedProperties.displayName == "ServicePrincipal.ObjectID"`
  `| extend ServicePrincipalObjectID = replace_string(tostring(TargetResources_modifiedProperties.newValue),'"','')`
- | extend timestamp = TimeGenerated, AccountCustomEntity = InitiatingUserOrApp, IPCustomEntity = InitiatingIpAddress`
+ `| extend timestamp = TimeGenerated, AccountCustomEntity = InitiatingUserOrApp, IPCustomEntity = InitiatingIpAddress`
 
  
 
