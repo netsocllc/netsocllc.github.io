@@ -1,6 +1,6 @@
 ---
 title: "Detecting Privilege Escalation via High Privileged Role Assignments"
-date: 2022-10-17T06:15:03Z
+date: 2022-10-16T06:15:03Z
 draft: false
 
 ---
