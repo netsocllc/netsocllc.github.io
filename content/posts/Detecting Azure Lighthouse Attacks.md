@@ -1,5 +1,5 @@
 ---
-title: "Detecting Azure Lighthouse Attacks"
+title: "Detecting Azure Lighthouse Privilege Escalation Attacks"
 date: 2022-10-15T10:15:03Z
 draft: false
 ---
