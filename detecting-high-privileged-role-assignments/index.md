@@ -25,7 +25,7 @@ In order to detect changes to high privileged roles in Azure AD, it's required t
 
 ![image-20221016183203663](/posts/Detecting-High-Privileged-Role-Assignments.assets/image-20221016183203663.png)
 
-KQL 
+## KQL 
 
 Query to detect changes across the aforementioned roles, feel free to add additional high privileged roles like Security Administrator, Exchange Administrator, or Application Administrator.
 
